@@ -1,22 +1,35 @@
-# Geometrical Shapes in Rust
+# Geometric Shapes Drawer in Rust
 
-This Rust project draws random geometric shapes (lines, circles, rectangles, triangles, and points) on a blank canvas using the `raster` and `rand` crates.
+This Rust project generates PNG images by drawing various geometric shapes (points, lines, rectangles, triangles, and circles) with random colors and positions using the `raster` and `rand` crates.
 
-## Preview
+## Features
 
-Example output from the program:
+- **Random Generation**:
+  - Random positions within canvas bounds
+  - Random RGB colors for each shape
+  - Random circle radii
+- **Drawing Algorithms**:
+  - DDA algorithm for lines
+  - Bresenham's algorithm for circles
 
-![Generated Image](image.png)
+### Shape Implementations
+- **`Point`**: Single pixel at (x,y)
+- **`Line`**: Connects two points using DDA algorithm
+- **`Rectangle`**: Drawn using four connecting lines
+- **`Triangle`**: Drawn using three connecting lines
+- **`Circle`**: Rendered using Bresenham's circle algorithm
 
-## 🛠️ Run the Code
+## Output Example
 
+![Generated geometric shapes image](image.png)
+*(Actual output will vary due to random generation)*
+
+## Dependencies
 1. Add dependencies in `Cargo.toml`:
 
-```toml
-[dependencies]
-raster = "0.2"
-rand = "0.8"```
+- `raster` = "0.2.0" (image manipulation)
+- `rand` = "0.9.2" (random generation)
 
-2. Run the project:
+## 🛠️ Run the Code
 
 ```cargo run```
